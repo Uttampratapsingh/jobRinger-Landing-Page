@@ -1,6 +1,16 @@
-import React, { useState } from "react";
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import { FaGoogle, FaFacebook, FaAmazon, FaMicrosoft, FaApple, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import React from "react";
+import {
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+  FaGoogle,
+  FaFacebook,
+  FaAmazon,
+  FaMicrosoft,
+  FaApple,
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+} from "react-icons/fa";
 
 const FeaturedEmployers = () => {
   const employers = [
@@ -12,32 +22,7 @@ const FeaturedEmployers = () => {
     { name: "LinkedIn", logo: <FaLinkedin className="text-blue-700 text-4xl" /> },
     { name: "Twitter", logo: <FaTwitter className="text-blue-400 text-4xl" /> },
     { name: "GitHub", logo: <FaGithub className="text-black text-4xl" /> },
-    { name: "Google", logo: <FaGoogle className="text-red-500 text-4xl" /> },
-    { name: "Facebook", logo: <FaFacebook className="text-blue-600 text-4xl" /> },
-    { name: "Amazon", logo: <FaAmazon className="text-yellow-500 text-4xl" /> },
-    { name: "Microsoft", logo: <FaMicrosoft className="text-green-500 text-4xl" /> },
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const numCardsToShow = 6;
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? employers.length - numCardsToShow : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev + numCardsToShow >= employers.length ? 0 : prev + 1
-    );
-  };
-
-  const visibleEmployers = employers.slice(currentIndex, currentIndex + numCardsToShow);
-  while (visibleEmployers.length < numCardsToShow) {
-    visibleEmployers.push(employers[visibleEmployers.length % employers.length]);
-  }
 
   return (
     <section className="py-16 bg-white">
@@ -47,11 +32,15 @@ const FeaturedEmployers = () => {
         </h2>
 
         <div className="relative">
-          <div className="flex -ml-2 md:-ml-4">
-            {visibleEmployers.map((employer, index) => (
+          <div className="flex flex-wrap -ml-2 md:-ml-4">
+            {employers.map((employer, index) => (
               <div
                 key={index}
-                className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex-shrink-0"
+                className="
+                  pl-2 md:pl-4
+                  basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6
+                  flex-shrink-0
+                "
               >
                 <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center hover:shadow-md transition-shadow duration-300 cursor-pointer group h-28">
                   <div className="text-center">
@@ -65,18 +54,12 @@ const FeaturedEmployers = () => {
             ))}
           </div>
 
-          {/* Navigation arrows */}
-          <div className="flex justify-between absolute top-1/2 transform -translate-y-1/2 w-full px-4">
-            <button
-              onClick={handlePrev}
-              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400"
-            >
+          {/* Navigation arrows — hidden on small screens */}
+          <div className="hidden lg:flex justify-between absolute top-1/2 transform -translate-y-1/2 w-full px-4">
+            <button className="p-2 rounded-full bg-gray-300 hover:bg-gray-400">
               <FaLongArrowAltLeft />
             </button>
-            <button
-              onClick={handleNext}
-              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400"
-            >
+            <button className="p-2 rounded-full bg-gray-300 hover:bg-gray-400">
               <FaLongArrowAltRight />
             </button>
           </div>
