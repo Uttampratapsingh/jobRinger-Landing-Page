@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Locations from "./components/Locations";
 import Quick from "./components/Quick";
 import Stats from "./components/Stats";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Locations/>
       <Stats/>
       <Footer/>
+      <SpeedInsights />
     </div>
   )
 }
