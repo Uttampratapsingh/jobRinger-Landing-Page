@@ -1,23 +1,23 @@
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Skills from "./components/Skills"
-import Experience from "./components/Experience"
-import About from "./components/About"
-import Education from "./components/Education"
-import Contact from "./components/Contact"
+import FeaturedEmployers from "./components/FeaturedEmployers";
+import FeaturedJobs from "./components/FeaturedJobs";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Locations from "./components/Locations";
+import Quick from "./components/Quick";
+import Stats from "./components/Stats";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Navbar/>
-      <main>
-        <Hero/>
-        <Skills/>
-        <Experience/>
-        <About/>
-        <Education/>
-        <Contact/>
-      </main>
+    <div className="min-h-screen bg-white">
+      <Header/>
+      <Hero/>
+      <Quick/>
+      <FeaturedJobs/>
+      <FeaturedEmployers/>
+      <Locations/>
+      <Stats/>
+      <Footer/>
     </div>
   )
 }

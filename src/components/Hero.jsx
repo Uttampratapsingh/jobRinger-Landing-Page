@@ -1,37 +1,24 @@
-import React from 'react'
-import { BsCloudDownload } from "react-icons/bs";
-
 const Hero = () => {
-
-    const handleDownloadResume = () => {
-        const resumeUrl = 'https://drive.google.com/uc?export=download&id=19TPJ9NghLRXhk62t9haB8ZTour0UzsKZ';
-  
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-        link.download = 'Uttam-Pratap-Singh-Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
   return (
-    <section id='Home' className='min-h-screen flex items-center justify-center px-6 pt-20'>
-        <div className='max-w-4xl mx-auto text-center'>
-            <div className='animate-fade-in'>
-                <h1 className='text-5xl md:text-7xl font-bold text-slate-800 mb-6 leading-tight'>
-                    Hi, I'm <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
-                        Uttam Pratap Singh
-                    </span>
-                </h1>
-                <p className='md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed'>
-                    A passionate developer crafting beautiful digital experiences with modern technologies.
-                    <br />
-                    I turn ideas into reality through clean code and innovative design.
-                </p>
-                <button onClick={handleDownloadResume} className='flex items-center mx-auto text-center bg-gradient-to-r from-blue-600 gap-3 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-3 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl rounded-xl'>
-                    <BsCloudDownload />
-                    Get Resume
-                </button>
+    <section className="bg-gradient-to-br from-sky-200 via-blue-700 to-sky-200 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">BRINGING YOU THE PERFECT JOB !</h1>
+                <p className="text-xl text-white">11,000+ JOBS to Apply</p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-lg p-6 shadow-xl">
+                    <div className="flex flex-col md:flex-row gap-4">
+                        <div className="flex-1">
+                            <input type="text" placeholder="Search Jobs now" className="h-12 w-full rounded-lg border-2 pl-2 text-lg border-gray-300" />
+                        </div>
+                        <button className="h-12 px-8 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">Search</button>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-4 mt-6">
+                        <button className="h-12 px-8 rounded-lg border hover:bg-gray-200 text-black font-semibold">View Jobs</button>
+                        <button className="h-12 px-8 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">Register For Free</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
